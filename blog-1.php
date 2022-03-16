@@ -808,7 +808,12 @@
 
 
                 <?php
-                $id=11;
+                $a=0;
+                $id = intval($_GET['link']);
+                  
+            
+                   // echo "Chevking". $id; //Outputs: 2
+                
                 // define('DB_SERVER', 'localhost');
                 // define('DB_USERNAME', 'root');
                 // define('DB_PASSWORD', '');
@@ -869,7 +874,7 @@
                     <div class="col-sm-2"></div>
                 </div>
             </div>
-            <div class="footer_section_2">
+            <!-- <div class="footer_section_2">
                 <div class="row">
                     <div class="col-sm-4 col-lg-2">
                         <p class="dummy_text"> ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur ipsum
@@ -914,7 +919,7 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     </div>

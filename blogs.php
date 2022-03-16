@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<!-- site metas -->
-	<title>Shoes</title>
+	<title>BLOG</title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -55,7 +55,7 @@
 								<a class="nav-item nav-link" href="blogs.php">Blogs</a>
 								<a class="nav-item nav-link" href="aboutus.php">About Us</a>
 								<a class="nav-item nav-link" href="contact.php">Contact</a>
-								
+
 							</div>
 						</div>
 					</nav>
@@ -75,7 +75,7 @@
 								<li data-target="#myCarousel" data-slide-to="3"></li>
 							</ol>
 
-							
+
 						</div>
 					</div>
 				</section>
@@ -94,10 +94,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
-					<a href="blog-1.php"><div class="best_shoes">
+				
+					
+						 <div class="best_shoes">
 						<p class="best_text">Best Shoes </p>
-						<div class="shoes_icon"><img src="images/shoes-img4.png"></div>
-						<div class="star_text">
+						<div class="shoes_icon"><?php
+					$a = '9';
+					echo '<a href="blog-1.php?link=' . $a . '"><img src="images/shoes-img4.png"></a>';
+					?></div>
+						<!-- <div class="star_text">
 							<div class="left_part">
 								<ul>
 									<li><a href=""><img src="images/star-icon.png"></a></li>
@@ -110,48 +115,52 @@
 							<div class="right_part">
 								<div class="shoes_price">$ <span style="color: #ff4e5b;">60</span></div>
 							</div>
-						</div>
-					</div></a>
+						</div> -->
+					</div> 
 				</div>
 				<div class="col-sm-4">
-					<a href="blog-2.php"><div class="best_shoes">
-						<p class="best_text">Best Shoes </p>
-						<div class="shoes_icon"><img src="images/shoes-img5.png"></div>
-						<div class="star_text">
-							<div class="left_part">
-								<ul>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-								</ul>
-							</div>
-							<div class="right_part">
-								<div class="shoes_price">$ <span style="color: #ff4e5b;">400</span></div>
-							</div>
+					<a href="blog-2.php">
+						<div class="best_shoes">
+							<p class="best_text">Best Shoes </p>
+							<div class="shoes_icon"><img src="images/shoes-img5.png"></div>
+							<!-- <div class="star_text">
+								<div class="left_part">
+									<ul>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+									</ul>
+								</div>
+								<div class="right_part">
+									<div class="shoes_price">$ <span style="color: #ff4e5b;">400</span></div>
+								</div>
+							</div> -->
 						</div>
-					</div></a>
+					</a>
 				</div>
 				<div class="col-sm-4">
-					<a href="blog-3.php"><div class="best_shoes">
-						<p class="best_text">Best Shoes </p>
-						<div class="shoes_icon"><img src="images/shoes-img6.png"></div>
-						<div class="star_text">
-							<div class="left_part">
-								<ul>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-								</ul>
-							</div>
-							<div class="right_part">
-								<div class="shoes_price">$ <span style="color: #ff4e5b;">50</span></div>
-							</div>
+					<a href="blog-3.php">
+						<div class="best_shoes">
+							<p class="best_text">Best Shoes </p>
+							<div class="shoes_icon"><img src="images/shoes-img6.png"></div>
+							<!-- <div class="star_text">
+								<div class="left_part">
+									<ul>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+									</ul>
+								</div>
+								<div class="right_part">
+									<div class="shoes_price">$ <span style="color: #ff4e5b;">50</span></div>
+								</div>
+							</div> -->
 						</div>
-					</div></a>
+					</a>
 				</div>
 			</div>
 			<div class="row">
@@ -159,7 +168,7 @@
 					<div class="best_shoes">
 						<p class="best_text">Sports Shoes</p>
 						<div class="shoes_icon"><img src="images/shoes-img7.png"></div>
-						<div class="star_text">
+						<!-- <div class="star_text">
 							<div class="left_part">
 								<ul>
 									<li><a href="#"><img src="images/star-icon.png"></a></li>
@@ -172,14 +181,14 @@
 							<div class="right_part">
 								<div class="shoes_price">$ <span style="color: #ff4e5b;">70</span></div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="best_shoes">
 						<p class="best_text">Sports Shoes</p>
 						<div class="shoes_icon"><img src="images/shoes-img8.png"></div>
-						<div class="star_text">
+						<!-- <div class="star_text">
 							<div class="left_part">
 								<ul>
 									<li><a href="#"><img src="images/star-icon.png"></a></li>
@@ -192,14 +201,14 @@
 							<div class="right_part">
 								<div class="shoes_price">$ <span style="color: #ff4e5b;">100</span></div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="best_shoes">
 						<p class="best_text">Sports Shoes</p>
 						<div class="shoes_icon"><img src="images/shoes-img9.png"></div>
-						<div class="star_text">
+						<!-- <div class="star_text">
 							<div class="left_part">
 								<ul>
 									<li><a href="#"><img src="images/star-icon.png"></a></li>
@@ -212,13 +221,13 @@
 							<div class="right_part">
 								<div class="shoes_price">$ <span style="color: #ff4e5b;">90</span></div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
-			<div class="buy_now_bt">
+			<!-- <div class="buy_now_bt">
 				<button class="buy_text">Buy Now</button>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<!-- New Arrivals section end -->

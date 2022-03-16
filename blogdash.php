@@ -150,7 +150,7 @@
         <span class="material-icons-outlined">
           account_circle
         </span>
-        <a href="./retpro.php">Previous Blog</a>
+        <a href="./retr.php">Previous Blog</a>
       </div>
       <div class="form-item">
         <span class="material-icons-outlined">
