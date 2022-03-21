@@ -93,16 +93,23 @@
 	<div class="layout_padding gallery_section">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4">
-				
-					
-						 <div class="best_shoes">
-						<p class="best_text">Best Shoes </p>
-						<div class="shoes_icon"><?php
-					$a = '9';
-					echo '<a href="blog-1.php?link=' . $a . '"><img src="images/shoes-img4.png"></a>';
-					?></div>
-						<!-- <div class="star_text">
+				<?php
+				require_once "config.php";
+				$product_array = ("SELECT * FROM blogs ORDER BY id ASC");
+				$query1 = mysqli_query($connection, $product_array);
+				if (!empty($query1)) {
+					foreach ($query1 as $key => $value) {
+				?>
+						<div class="col-sm-4">
+
+
+							<div class="best_shoes">
+								<p class="best_text">Best Shoes </p>
+								<div class="shoes_icon"><?php
+														$a = '9';
+														echo '<a href="blog-1.php?link=' . $a . '"><img src="images/shoes-img4.png"></a>';
+														?></div>
+								<!-- <div class="star_text">
 							<div class="left_part">
 								<ul>
 									<li><a href=""><img src="images/star-icon.png"></a></li>
@@ -116,14 +123,18 @@
 								<div class="shoes_price">$ <span style="color: #ff4e5b;">60</span></div>
 							</div>
 						</div> -->
-					</div> 
-				</div>
-				<div class="col-sm-4">
+							</div>
+						</div>
+				<?php
+					}
+				}
+				?>
+				<!-- <div class="col-sm-4">
 					<a href="blog-2.php">
 						<div class="best_shoes">
 							<p class="best_text">Best Shoes </p>
-							<div class="shoes_icon"><img src="images/shoes-img5.png"></div>
-							<!-- <div class="star_text">
+							<div class="shoes_icon"><img src="images/shoes-img5.png"></div> -->
+				<!-- <div class="star_text">
 								<div class="left_part">
 									<ul>
 										<li><a href="#"><img src="images/star-icon.png"></a></li>
@@ -137,15 +148,15 @@
 									<div class="shoes_price">$ <span style="color: #ff4e5b;">400</span></div>
 								</div>
 							</div> -->
-						</div>
+				<!-- </div>
 					</a>
-				</div>
-				<div class="col-sm-4">
+				</div> -->
+				<!-- <div class="col-sm-4">
 					<a href="blog-3.php">
 						<div class="best_shoes">
 							<p class="best_text">Best Shoes </p>
 							<div class="shoes_icon"><img src="images/shoes-img6.png"></div>
-							<!-- <div class="star_text">
+							<div class="star_text">
 								<div class="left_part">
 									<ul>
 										<li><a href="#"><img src="images/star-icon.png"></a></li>
@@ -158,17 +169,17 @@
 								<div class="right_part">
 									<div class="shoes_price">$ <span style="color: #ff4e5b;">50</span></div>
 								</div>
-							</div> -->
+							</div>
 						</div>
 					</a>
-				</div>
+				</div> -->
 			</div>
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-sm-4">
 					<div class="best_shoes">
 						<p class="best_text">Sports Shoes</p>
 						<div class="shoes_icon"><img src="images/shoes-img7.png"></div>
-						<!-- <div class="star_text">
+						<div class="star_text">
 							<div class="left_part">
 								<ul>
 									<li><a href="#"><img src="images/star-icon.png"></a></li>
@@ -181,14 +192,14 @@
 							<div class="right_part">
 								<div class="shoes_price">$ <span style="color: #ff4e5b;">70</span></div>
 							</div>
-						</div> -->
+						</div>
 					</div>
-				</div>
-				<div class="col-sm-4">
+				</div> -->
+			<!-- <div class="col-sm-4">
 					<div class="best_shoes">
 						<p class="best_text">Sports Shoes</p>
 						<div class="shoes_icon"><img src="images/shoes-img8.png"></div>
-						<!-- <div class="star_text">
+						<div class="star_text">
 							<div class="left_part">
 								<ul>
 									<li><a href="#"><img src="images/star-icon.png"></a></li>
@@ -201,14 +212,14 @@
 							<div class="right_part">
 								<div class="shoes_price">$ <span style="color: #ff4e5b;">100</span></div>
 							</div>
-						</div> -->
+						</div>
 					</div>
-				</div>
-				<div class="col-sm-4">
+				</div> -->
+			<!-- <div class="col-sm-4">
 					<div class="best_shoes">
 						<p class="best_text">Sports Shoes</p>
 						<div class="shoes_icon"><img src="images/shoes-img9.png"></div>
-						<!-- <div class="star_text">
+						<div class="star_text">
 							<div class="left_part">
 								<ul>
 									<li><a href="#"><img src="images/star-icon.png"></a></li>
@@ -221,14 +232,14 @@
 							<div class="right_part">
 								<div class="shoes_price">$ <span style="color: #ff4e5b;">90</span></div>
 							</div>
-						</div> -->
+						</div>
 					</div>
-				</div>
-			</div>
-			<!-- <div class="buy_now_bt">
+				</div> -->
+		</div>
+		<!-- <div class="buy_now_bt">
 				<button class="buy_text">Buy Now</button>
 			</div> -->
-		</div>
+	</div>
 	</div>
 	<!-- New Arrivals section end -->
 	<!-- section footer start -->
@@ -323,34 +334,35 @@
 	<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 	<script>
 		$(document).ready(function() {
-					$(".fancybox").fancybox({
-						openEffect: "none",
-						closeEffect: "none"
-					});
+			$(".fancybox").fancybox({
+				openEffect: "none",
+				closeEffect: "none"
+			});
 
 
-					$('#myCarousel').carousel({
-						interval: false
-					});
+			$('#myCarousel').carousel({
+				interval: false
+			});
 
-					//scroll slides on swipe for touch enabled devices
+			//scroll slides on swipe for touch enabled devices
 
-					$("#myCarousel").on("touchstart", function(event) {
+			$("#myCarousel").on("touchstart", function(event) {
 
-						var yClick = event.originalEvent.touches[0].pageY;
-						$(this).one("touchmove", function(event) {
+				var yClick = event.originalEvent.touches[0].pageY;
+				$(this).one("touchmove", function(event) {
 
-							var yMove = event.originalEvent.touches[0].pageY;
-							if (Math.floor(yClick - yMove) > 1) {
-								$(".carousel").carousel('next');
-							} else if (Math.floor(yClick - yMove) < -1) {
-								$(".carousel").carousel('prev');
-							}
-						});
-						$(".carousel").on("touchend", function() {
-							$(this).off("touchmove");
-						});
-					});
+					var yMove = event.originalEvent.touches[0].pageY;
+					if (Math.floor(yClick - yMove) > 1) {
+						$(".carousel").carousel('next');
+					} else if (Math.floor(yClick - yMove) < -1) {
+						$(".carousel").carousel('prev');
+					}
+				});
+				$(".carousel").on("touchend", function() {
+					$(this).off("touchmove");
+				});
+			});
+		})
 	</script>
 </body>
 

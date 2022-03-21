@@ -568,6 +568,7 @@ if (isset($_REQUEST["submit"])) {
 							$(this).off("touchmove");
 						});
 					});
+				})
 	</script>
 </body>
 

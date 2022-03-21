@@ -775,7 +775,7 @@
         <div class="container">
             <div class="creative_taital">
                 <h1 class="creative_text"><?php
-                $id=11;
+                $id=intval($_GET['link']);
                 define('DB_SERVER', 'localhost');
                 define('DB_USERNAME', 'root');
                 define('DB_PASSWORD', '');

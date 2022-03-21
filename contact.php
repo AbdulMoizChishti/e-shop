@@ -298,6 +298,7 @@
                             $(this).off("touchmove");
                         });
                     });
+                })
     </script>
 </body>
 

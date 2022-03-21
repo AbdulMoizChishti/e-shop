@@ -335,6 +335,7 @@
 							$(this).off("touchmove");
 						});
 					});
+				})
 	</script>
 
 
