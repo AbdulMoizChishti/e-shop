@@ -170,19 +170,19 @@
         <span class="material-icons-outlined">
           account_circle
         </span>
-        <a href="./blogdash.php">blogs</a>
+        <a href="blogdash.php">blogs</a>
       </div>
       <div class="form-item">
         <span class="material-icons-outlined">
           account_circle
         </span>
-        <a href="./prodash.php">products</a>
+        <a href="prodash.php">products</a>
       </div>
       <div class="form-item">
         <span class="material-icons-outlined">
           account_circle
         </span>
-        <a href="./updr.php">Projects Demand</a>
+        <a href="updr.php">Projects Demand</a>
       </div>
 
 
@@ -190,13 +190,13 @@
         <span class="material-icons-outlined">
           account_circle
         </span>
-        <a href="./delr.php">Need Assistance?</a>
+        <a href="delr.php">Need Assistance?</a>
       </div>
       <div class="form-item">
         <span class="material-icons-outlined">
           account_circle
         </span>
-        <a href="./delr.php">Subscription</a>
+        <a href="delr.php">Subscription</a>
       </div>
       
     </form>
