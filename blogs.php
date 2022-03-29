@@ -95,7 +95,7 @@
 			<div class="row">
 				<?php
 				require_once "config.php";
-				$product_array = ("SELECT * FROM blogs ORDER BY id ASC");
+				$product_array = ("SELECT * FROM blog ORDER BY id ASC");
 				$query1 = mysqli_query($connection, $product_array);
 				if (!empty($query1)) {
 					foreach ($query1 as $key => $value) {
@@ -105,10 +105,55 @@
 
 							<div class="best_shoes">
 								<p class="best_text">Best Shoes </p>
-								<div class="shoes_icon"><?php
-														$a = '9';
-														echo '<a href="blog-1.php?link=' . $a . '"><img src="images/shoes-img4.png"></a>';
-														?></div>
+								<div class="shoes_icon">
+
+									<?php
+									// Include the database configuration file  
+									require_once 'config.php';
+									$r = $connection->query("SELECT image FROM images");
+									while ($row = $r->fetch_assoc()) {
+										$a = 6;
+									
+									// Get image data from database 
+									$result = $connection->query("SELECT image FROM images where id =".$a);
+								
+									}
+
+									?>
+
+									<?php if ($result->num_rows > 0) { ?>
+										<div class="gallery">
+											<?php
+											while ($row = $result->fetch_assoc()) {
+												echo $a;
+											?>
+												<a href="blog-1.php?link=<?php echo $a; ?>"><img src="data:image/png;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /></a>
+											<?php
+											echo $a;
+												++$a;
+												
+											
+											}
+
+											?>
+										</div>
+									<?php
+									} else {
+									?>
+										<p class="status error">Image(s) not found...</p>
+									<?php
+									}
+									?>
+
+
+
+
+
+									<?php
+
+
+									?>
+								</div>
 								<!-- <div class="star_text">
 							<div class="left_part">
 								<ul>

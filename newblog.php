@@ -1,70 +1,64 @@
-<?php 
+<?php
 // Include the database configuration file  
-require_once 'config.php'; 
- 
+require_once 'config.php';
+
 // If file upload form is submitted 
-$status = $statusMsg = ''; 
-if(isset($_POST["submit"])){ 
-    echo "if is working";
-    $status = 'error'; 
-    if(!empty($_FILES["image"]["name"])) { 
+$status = $statusMsg = '';
+if (isset($_POST["submit1"])) {
+    $status = 'error';
+    if (!empty($_FILES["image"]["name"])) {
         // Get file info 
-        $fileName = basename($_FILES["image"]["name"]); 
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-         
+        $fileName = basename($_FILES["image"]["name"]);
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+
         // Allow certain file formats 
-        $allowTypes = array('jpg','png','jpeg','gif'); 
-        if(in_array($fileType, $allowTypes)){ 
-            $image = $_FILES['image']['tmp_name']; 
-            $imgContent = addslashes(file_get_contents($image)); 
-         
+        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+        if (in_array($fileType, $allowTypes)) {
+            $image = $_FILES['image']['tmp_name'];
+            $imgContent = addslashes(file_get_contents($image));
+
             // Insert image content into database 
-            
-
-            $insert ="INSERT into blogs (img) VALUES ('$imgContent')";
-            $query1=mysqli_query($connection,$insert);
 
 
+            $insert = "INSERT into images (image, created) VALUES ('$imgContent', NOW())";
+            $query1 = mysqli_query($connection, $insert);
 
-             
-            if($insert){ 
-                $status = 'success'; 
-                $statusMsg = "File uploaded successfully."; 
-            }else{ 
-                $statusMsg = "File upload failed, please try again."; 
-            }  
-        }else{ 
-            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
-        } 
-    }else{ 
-        $statusMsg = 'Please select an image file to upload.'; 
-    } 
-} 
- 
+
+
+
+            if ($insert) {
+                $status = 'success';
+                $statusMsg = "File uploaded successfully.";
+            } else {
+                $statusMsg = "File upload failed, please try again.";
+            }
+        } else {
+            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.';
+        }
+    } else {
+        $statusMsg = 'Please select an image file to upload.';
+    }
+}
+
 // Display status message 
-echo $statusMsg; 
+echo $statusMsg;
 ?>
-
-
-
 
 <?php
 
-
-
 if (isset($_REQUEST["submit"])) {
-    
+
     $title = $_REQUEST["title"];
     $description = $_REQUEST["description"];
-    
 
 
-    $ins = "INSERT INTO blogs (title, description) VALUES ('$title','$description')";
+
+    $ins = "INSERT INTO blog (title, description) VALUES ('$title','$description')";
     $query1 = mysqli_query($connection, $ins);
 
-    // if ($query1) {
-    //     header("Location: ./retr.php ");
-    // }
+    if ($query1) {
+        echo "stored";
+    }
 }
 
 ?>
@@ -239,6 +233,7 @@ if (isset($_REQUEST["submit"])) {
     </style>
 
 </head>
+<!-- THis section is for Title and description -->
 
 <body>
     <div class="background"></div>
@@ -250,16 +245,28 @@ if (isset($_REQUEST["submit"])) {
                 <input type="text" class="email-bt" placeholder="Title" name="title">
             </div>
 
-            <div class="form-item">
-                <input type="file" class="email-bt" name="image">
-            </div>
+
 
 
             <div class="form-item">
                 <textarea class="massage-bt" placeholder="Description" rows="5" id="description" name="description"></textarea>
             </div>
-            <input type="submit"  name ='submit'value="submit">
+            <input type="submit" name='submit' value="submit">
         </form>
+    </div>
+
+    <!-- This section is for uploading pic -->
+    <div class="container">
+        <h2>Upload Pic</h2>
+
+
+        <form action="newblog.php" method="post" class="form-item" enctype="multipart/form-data">
+
+            <input type="file" class="email-bt" name="image">
+            <input type="submit" name="submit1" value="Upload">
+        </form>
+
+
     </div>
 
 

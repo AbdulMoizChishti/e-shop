@@ -787,7 +787,7 @@
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
-                $sql = "SELECT title FROM blogs WHERE id =".$id;
+                $sql = "SELECT title FROM blog WHERE id =".$id;
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -808,7 +808,7 @@
 
 
                 <?php
-                $a=0;
+               
                 $id = intval($_GET['link']);
                   
             
@@ -825,7 +825,7 @@
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
-                $sql = "SELECT description FROM blogs WHERE id =".$id;
+                $sql = "SELECT description FROM blog WHERE id =".$id;
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
