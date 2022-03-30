@@ -112,13 +112,17 @@
 									require_once 'config.php';
 									$r = $connection->query("SELECT image FROM images");
 									while ($row = $r->fetch_assoc()) {
-										$a = 6;
+									static	$a = 8;
 									
 									// Get image data from database 
 									$result = $connection->query("SELECT image FROM images where id =".$a);
 								
+								
+									
+								
 									}
-
+								
+									echo $a;
 									?>
 
 									<?php if ($result->num_rows > 0) { ?>
@@ -129,12 +133,11 @@
 											?>
 												<a href="blog-1.php?link=<?php echo $a; ?>"><img src="data:image/png;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /></a>
 											<?php
-											echo $a;
-												++$a;
-												
+											++$a;
+									
+								}
 											
-											}
-
+										
 											?>
 										</div>
 									<?php
