@@ -133,7 +133,7 @@ if (isset($_REQUEST["submit"])) {
 												<h1 class="banner_text">New Running Shoes </h1>
 												<h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
 												<p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-												<button class="buy_bt">Buy Now</button>
+												<a  target= "_blank"href= "https://www.youtube.com/channel/UCsZydS6Ww6KdeGsYao4lniw"class="buy_bt">Visit YT</a>
 												<button class="more_bt">See More</button>
 											</div>
 										</div>

@@ -15,6 +15,7 @@
       color: white;
       font-family: Arial, Helvetica, sans-serif;
     }
+
     .background {
       background: url('banner.png') rgba(0, 0, 0, 0.61);
       background-repeat: no-repeat;
@@ -29,9 +30,11 @@
       filter: blur(3px);
       min-height: 800px;
     }
+
     h2 {
       font-size: 30px;
     }
+
     .container {
       display: flex;
       flex-direction: column;
@@ -43,12 +46,14 @@
       width: 500px;
       margin: 10vh auto;
     }
+
     form {
       padding: 10px;
       display: flex;
       flex-direction: column;
       width: 85%;
     }
+
     .form-item {
       display: flex;
       width: 90%;
@@ -58,10 +63,12 @@
       border-radius: 15px;
       border-bottom: 1px solid rgb(82, 81, 81);
     }
+
     .form-item:hover {
       border: 1px solid rgb(82, 81, 81);
       ;
     }
+
     input {
       font-size: 18px;
       width: 80%;
@@ -72,6 +79,7 @@
       margin: auto;
       color: white;
     }
+
     span {
       margin: 5px;
       color: rgb(172, 172, 172);
@@ -81,6 +89,7 @@
       padding: 5px;
       border-radius: 15px;
     }
+
     button[type="submit"] {
       width: 250px;
       font-size: 20px;
@@ -91,19 +100,23 @@
       border: none;
       text-align: center;
     }
+
     button[type="submit"]:hover {
       background: rgb(172, 134, 8);
     }
+
     p:first-of-type {
       font-size: 18px;
       margin: 0;
     }
+
     .options {
       display: flex;
       margin: 10px auto;
       flex-wrap: wrap;
       justify-content: center;
     }
+
     button {
       padding: 5px 16px;
       font-size: 18px;
@@ -114,26 +127,32 @@
       cursor: pointer;
       transition: all 0.7s ease;
     }
+
     .fb:hover {
       background: rgb(5, 5, 73);
       border: none;
       box-shadow: 0 0 5px rgb(5, 5, 73);
     }
+
     .gl:hover {
       background: rgb(73, 5, 5);
       border: none;
       box-shadow: 0 0 5px rgb(73, 5, 5);
     }
+
     p {
       font-size: 18px;
       margin: 5px;
     }
+
     a {
       color: white;
     }
+
     a:hover {
       color: grey;
     }
+
     @media screen and (max-width:550px) {
       .container {
         width: 90%;
@@ -141,6 +160,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="background"></div>
   <div class="container">
@@ -158,8 +178,16 @@
         </span>
         <a href="newblog.php">New Blog</a>
       </div>
-      
+
+      <div class="form-item">
+        <span class="material-icons-outlined">
+          account_circle
+        </span>
+        <a href="retblog.php">View Blogs</a>
+      </div>
+
     </form>
   </div>
 </body>
+
 </html>

@@ -112,16 +112,12 @@
 									require_once 'config.php';
 									$r = $connection->query("SELECT image FROM images");
 									while ($row = $r->fetch_assoc()) {
-									static	$a = 8;
-									
-									// Get image data from database 
-									$result = $connection->query("SELECT image FROM images where id =".$a);
-								
-								
-									
-								
+										static	$a = 8;
+
+										// Get image data from database 
+										$result = $connection->query("SELECT image FROM images where id =" . $a);
 									}
-								
+
 									echo $a;
 									?>
 
@@ -129,15 +125,14 @@
 										<div class="gallery">
 											<?php
 											while ($row = $result->fetch_assoc()) {
-												echo $a;
+												// echo $a;
 											?>
 												<a href="blog-1.php?link=<?php echo $a; ?>"><img src="data:image/png;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /></a>
 											<?php
-											++$a;
-									
-								}
-											
-										
+												$a++;
+											}
+
+
 											?>
 										</div>
 									<?php
@@ -148,145 +143,19 @@
 									}
 									?>
 
-
-
-
-
-									<?php
-
-
-									?>
 								</div>
-								<!-- <div class="star_text">
-							<div class="left_part">
-								<ul>
-									<li><a href=""><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-								</ul>
-							</div>
-							<div class="right_part">
-								<div class="shoes_price">$ <span style="color: #ff4e5b;">60</span></div>
-							</div>
-						</div> -->
+
 							</div>
 						</div>
 				<?php
 					}
 				}
 				?>
-				<!-- <div class="col-sm-4">
-					<a href="blog-2.php">
-						<div class="best_shoes">
-							<p class="best_text">Best Shoes </p>
-							<div class="shoes_icon"><img src="images/shoes-img5.png"></div> -->
-				<!-- <div class="star_text">
-								<div class="left_part">
-									<ul>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-									</ul>
-								</div>
-								<div class="right_part">
-									<div class="shoes_price">$ <span style="color: #ff4e5b;">400</span></div>
-								</div>
-							</div> -->
-				<!-- </div>
-					</a>
-				</div> -->
-				<!-- <div class="col-sm-4">
-					<a href="blog-3.php">
-						<div class="best_shoes">
-							<p class="best_text">Best Shoes </p>
-							<div class="shoes_icon"><img src="images/shoes-img6.png"></div>
-							<div class="star_text">
-								<div class="left_part">
-									<ul>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-										<li><a href="#"><img src="images/star-icon.png"></a></li>
-									</ul>
-								</div>
-								<div class="right_part">
-									<div class="shoes_price">$ <span style="color: #ff4e5b;">50</span></div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div> -->
+
 			</div>
-			<!-- <div class="row">
-				<div class="col-sm-4">
-					<div class="best_shoes">
-						<p class="best_text">Sports Shoes</p>
-						<div class="shoes_icon"><img src="images/shoes-img7.png"></div>
-						<div class="star_text">
-							<div class="left_part">
-								<ul>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-								</ul>
-							</div>
-							<div class="right_part">
-								<div class="shoes_price">$ <span style="color: #ff4e5b;">70</span></div>
-							</div>
-						</div>
-					</div>
-				</div> -->
-			<!-- <div class="col-sm-4">
-					<div class="best_shoes">
-						<p class="best_text">Sports Shoes</p>
-						<div class="shoes_icon"><img src="images/shoes-img8.png"></div>
-						<div class="star_text">
-							<div class="left_part">
-								<ul>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-								</ul>
-							</div>
-							<div class="right_part">
-								<div class="shoes_price">$ <span style="color: #ff4e5b;">100</span></div>
-							</div>
-						</div>
-					</div>
-				</div> -->
-			<!-- <div class="col-sm-4">
-					<div class="best_shoes">
-						<p class="best_text">Sports Shoes</p>
-						<div class="shoes_icon"><img src="images/shoes-img9.png"></div>
-						<div class="star_text">
-							<div class="left_part">
-								<ul>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-									<li><a href="#"><img src="images/star-icon.png"></a></li>
-								</ul>
-							</div>
-							<div class="right_part">
-								<div class="shoes_price">$ <span style="color: #ff4e5b;">90</span></div>
-							</div>
-						</div>
-					</div>
-				</div> -->
+
 		</div>
-		<!-- <div class="buy_now_bt">
-				<button class="buy_text">Buy Now</button>
-			</div> -->
+
 	</div>
 	</div>
 	<!-- New Arrivals section end -->
