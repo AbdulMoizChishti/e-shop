@@ -1,23 +1,23 @@
 <?php
 require_once "config.php";
 
-if (isset($_POST["update"])) {
+if (isset($_REQUEST["update"])) {
 
-    $title = $_POST["title"];
-    $description = $_POST["description"];
+  $id= $_REQUEST['id'];
+    $title = $_REQUEST["title"];
+    $description = $_REQUEST["description"];
 
 
 
 
-    $ins = "UPDATE car SET Make='$Make',Model='$Model' WHERE IDcar='$IDcar'";
+    $ins = "UPDATE blog SET title='$title', description='$description' WHERE id='$id'";
     $query1 = mysqli_query($connection, $ins);
     
-    if ($query1) {
-        header("Location: ./retr.php ");
-    }
 }
 
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -209,7 +209,7 @@ if (isset($_POST["update"])) {
         if (isset($_REQUEST["submit"])) {
         $id= $_REQUEST['id'];
         
-        echo $id;
+        // echo $id;
         
           $sql = "SELECT title FROM blog WHERE id =".$id;
           $query1 = mysqli_query($connection, $sql);
@@ -266,6 +266,8 @@ if (isset($_POST["update"])) {
       <div class="form-item">
         <input type="submit" name='submit' value="submit">
       </div>
+
+      
 
       <div class="form-item">
         <input type="update" name='update' value="update">

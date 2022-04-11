@@ -682,7 +682,7 @@
                                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                                     <div class="navbar-nav">
                                         <a class="nav-item nav-link" href="index.php">Home</a>
-                                        <a class="nav-item nav-link" href="products.php">Products</a>
+                                        <a class="nav-item nav-link" href="playlist.php">Playlist</a>
                                         <a class="nav-item nav-link" href="blogs.php">Blogs</a>
                                         <a class="nav-item nav-link" href="aboutus.php">About Us</a>
                                         <a class="nav-item nav-link" href="contact.php">Contact</a>
@@ -717,59 +717,7 @@
     </div>
     </div>
     <!-- end header end -->
-    <!--banner start -->
-    <!-- <div class="banner-main"> -->
-        <!-- <div class="container"> -->
-            <!-- <div id="main_slider" class="carousel slide" data-ride="carousel"> -->
-                <!-- The slideshow -->
-                <!-- <div class="carousel-inner"> -->
-                    <!-- <div class="carousel-item active"> -->
-                        <!-- <div class="titlepage-h1">
-                            <h1 class="bnner_title">Welcome To<br>
-                                <span style="color: #10b5fa">Content Writing Services</span>
-                            </h1>
-                            <p class="long_text">It is a long established fact that a reader will be distracted by the
-                                readable content of a page when looking </p>
-                        </div> -->
-                        <!-- <div class="btn_main">
-                            <button type="button" class="btn btn-dark btn-lg"><a href="contact.html">Contact</a></button>
-                        </div> -->
-                    <!-- </div> -->
-                    <!-- <div class="carousel-item">
-                        <div class="titlepage-h1">
-                            <h1 class="bnner_title">Welcome To<br>
-                                <span style="color: #10b5fa">Content Writing Services</span>
-                            </h1>
-                            <p class="long_text">It is a long established fact that a reader will be distracted by the
-                                readable content of a page when looking </p>
-                        </div>
-                        <div class="btn_main">
-                            <button type="button" class="btn btn-dark btn-lg">Contact</button>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="titlepage-h1">
-                            <h1 class="bnner_title">Welcome To<br>
-                                <span style="color: #10b5fa">Content Writing Services</span>
-                            </h1>
-                            <p class="long_text">It is a long established fact that a reader will be distracted by the
-                                readable content of a page when looking </p>
-                        </div>
-                        <div class="btn_main">
-                            <button type="button" class="btn btn-dark btn-lg">Contact</button>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="carousel-control-next" href="#main_slider" role="button" data-slide="prev">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </div> -->
-        <!-- </div> -->
-    <!-- </div> -->
-    <!--banner end -->
+    
     <!--services start -->
     <div class="services_main">
         <div class="container">
@@ -874,52 +822,7 @@
                     <div class="col-sm-2"></div>
                 </div>
             </div>
-            <!-- <div class="footer_section_2">
-                <div class="row">
-                    <div class="col-sm-4 col-lg-2">
-                        <p class="dummy_text"> ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur ipsum
-                            dolor sit amet,</p>
-                    </div>
-                    <div class="col-sm-4 col-lg-2">
-                        <h2 class="shop_text">Address </h2>
-                        <div class="image-icon"><img src="images/map-icon.png"><span class="pet_text">No 40 Baria Sreet
-                                15/2 NewYork City, NY, United States.</span></div>
-                    </div>
-                    <div class="col-sm-4 col-md-6 col-lg-3">
-                        <h2 class="shop_text">Our Company </h2>
-                        <div class="delivery_text">
-                            <ul>
-                                <li>Delivery</li>
-                                <li>Legal Notice</li>
-                                <li>About us</li>
-                                <li>Secure payment</li>
-                                <li>Contact us</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <h2 class="adderess_text">Products</h2>
-                        <div class="delivery_text">
-                            <ul>
-                                <li>Prices drop</li>
-                                <li>New products</li>
-                                <li>Best sales</li>
-                                <li>Contact us</li>
-                                <li>Sitemap</li>
-                                <li><a href="admin.php">Admin</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-2">
-                        <h2 class="adderess_text">Newsletter</h2>
-                        <div class="form-group">
-                            <input type="text" class="enter_email" placeholder="Enter Your email" name="Name">
-                        </div>
-                        <button class="subscribr_bt">Subscribe</button>
-                    </div>
-
-                </div>
-            </div> -->
+            
         </div>
     </div>
     </div>

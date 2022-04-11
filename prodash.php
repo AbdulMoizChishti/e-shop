@@ -150,7 +150,7 @@
         <span class="material-icons-outlined">
           account_circle
         </span>
-        <a href="retpro.php">Check Products</a>
+        <a href="retpro.php">Check Playlist</a>
       </div>
       <div class="form-item">
         <span class="material-icons-outlined">

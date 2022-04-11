@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<!-- site metas -->
-	<title>Racing Boot</title>
+	<title>Playlist</title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -62,29 +62,38 @@
 				</div>
 			</div>
 		</div>
-		
+	</div>
 	</div>
 	<!-- header section end -->
 	<!-- new collection section start -->
-	<div class="collection_text"> About Us</div>
-	<div class="about_main layout_padding">
-		<div class="collection_section">
-			<div class="container">
-				<h1 class="new_text"><strong>Racing Boots</strong></h1>
-				<p class="consectetur_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-			</div>
-		</div>
-		<div class="collectipn_section_3 layout_padding">
-			<div class="container">
-				<div class="racing_shoes">
-					<div class="row">
-						<div class="col-md-8">
-							<div class="shoes-img3"><img src="images/shoes-img3.png"></div>
+	<div class="collection_text">Playlist.</div>
+	<div class="layout_padding collection_section">
+		<div class="container">
+			<h1 class="new_text"><strong>New Playlist</strong></h1>
+			<p class="consectetur_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+			<div class="collection_section_2">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="best_shoes">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLA9pgpaiFC6VpV7djzRuUu_kbYcjlkkIm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</div>
-						<div class="col-md-4">
-							<div class="sale_text"><strong>Sale <br><span style="color: #0a0506;">JOGING</span> <br>SHOES</strong></div>
-							<div class="number_text"><strong>$ <span style="color: #0a0506">100</span></strong></div>
-							<button class="seemore">See More</button>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="best_shoes">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLA9pgpaiFC6UgYtBTS4IMK4u5YzcflCYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="best_shoes">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLA9pgpaiFC6XqRyLeOrWbM2-oIk0hTLBe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="best_shoes">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLA9pgpaiFC6XdNTgvs8YHGFYFODFlueqv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>
@@ -92,7 +101,7 @@
 		</div>
 	</div>
 	<!-- new collection section end -->
-	
+
 
 	<!-- Javascript files-->
 	<script src="js/jquery.min.js"></script>
@@ -138,6 +147,8 @@
 			});
 		})
 	</script>
+
+
 </body>
 
 </html>

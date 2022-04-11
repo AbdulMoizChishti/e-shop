@@ -176,7 +176,7 @@
         <span class="material-icons-outlined">
           account_circle
         </span>
-        <a href="prodash.php">products</a>
+        <a href="prodash.php">Playlist</a>
       </div>
       <div class="form-item">
         <span class="material-icons-outlined">
