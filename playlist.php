@@ -88,7 +88,7 @@
 					<?php
 								// Include the database configuration file  
 								require_once 'config.php';
-								$r = $connection->query("SELECT url FROM playlist");
+								$r = $connection->query("SELECT * FROM playlist");
 								while ($rows = $r->fetch_assoc()) {
 									static	$a = 1;
 
@@ -104,21 +104,26 @@
 
 					
 						<div class="best_shoes">
+						
 						<?php if ($result->num_rows > 0) { ?>
+							<div class="gallery">
 												<?php
 												while ($row = $result->fetch_assoc()) {
 													// echo $a;
 												?>
 						
-												<a target="blank" href="<?php echo $rows['url']; ?>" target="blank"><img width="370" height="315" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>"><b>JAVA TUTORIALS</b></a>
+												<a target="blank" href="<?php echo $rows['url']; ?>" target="blank"><img width="370" height="315" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>"><b><center><?php echo $rows['title']; ?></center></b></a>
 											<?php
 													$a++;
 												}
 											}
+
+										
 										}
 									}
 
 									?>
+							</div>
 									<?php
 												} else {
 											?>
@@ -133,6 +138,17 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
 	</div>
 	</div>
 	</div>

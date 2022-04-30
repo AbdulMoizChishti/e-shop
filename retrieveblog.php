@@ -10,7 +10,7 @@ if (isset($_REQUEST["update"])) {
 
 
 
-    $ins = "UPDATE blog SET title='$title', description='$description' WHERE id='$id'";
+    $ins = "UPDATE blogs SET title='$title', description='$description' WHERE id='$id'";
     $query1 = mysqli_query($connection, $ins);
     
 }
@@ -195,7 +195,7 @@ if (isset($_REQUEST["update"])) {
   <div class="background"></div>
   <div class="container">
     <h2>View Blog</h2>
-    <form action="retblog.php" method="post">
+    <form action="retrieveblog.php" method="post">
 
       <div class="form-item">
         <input type="text" class="email-bt" placeholder="id" name="id">
@@ -211,7 +211,7 @@ if (isset($_REQUEST["update"])) {
         
         // echo $id;
         
-          $sql = "SELECT title FROM blog WHERE id =".$id;
+          $sql = "SELECT title FROM blogs WHERE id =".$id;
           $query1 = mysqli_query($connection, $sql);
         
          
@@ -234,7 +234,7 @@ if (isset($_REQUEST["update"])) {
 
 
       <div class="form-item">
-        <textarea class="massage-bt" placeholder="Description" rows="6" id="description" name="description" value=<?php 
+        <textarea class="massage-bt" placeholder="Description" rows="20" cols="50" id="description" name="description" value=<?php 
         require_once 'config.php';
 
         if (isset($_REQUEST["submit"])) {
@@ -242,7 +242,7 @@ if (isset($_REQUEST["update"])) {
         
         echo $id;
         
-          $sql = "SELECT description FROM blog WHERE id =".$id;
+          $sql = "SELECT description FROM blogs WHERE id =".$id;
         
         $result = $connection->query($sql);
                 if ($result->num_rows > 0) {
@@ -260,7 +260,7 @@ if (isset($_REQUEST["update"])) {
       </div>
 
       <div class="form-item">
-        <input type="submit" name='submit' value="submit">
+        <input type="submit" name='submit' value="retrieve">
       </div>
 
       
