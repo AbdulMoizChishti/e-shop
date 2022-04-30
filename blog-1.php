@@ -164,7 +164,7 @@
             width: 100%;
             width: 100%;
             float: left;
-            background-color: #072833;
+            background-color: #ff4e5b;
             padding-bottom: 10px;
             padding-top: 10px;
         }
@@ -448,7 +448,7 @@
         .copyright {
             width: 100%;
             float: left;
-            background-color: #076787;
+            background-color: #ff4e5b;
             padding-top: 10px;
             padding-bottom: 10px;
 
@@ -660,21 +660,9 @@
 <body>
     <div class="header_main">
         <div class="container">
-            <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+            <div class="logo"><a href="index.php"><img src="images/logo.png"></a></div>
         </div>
-    </div>
-    </div>
-    <div class="header">
-        <div class="container">
-            <!--  header inner -->
-            <!-- header section start -->
-            <div class="header_section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
-                        </div>
-                        <div class="col-sm-9">
+        <div class="col-sm-9">
                             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
@@ -691,63 +679,59 @@
                                 </div>
                             </nav>
                         </div>
+
+    </div>
+    </div>
+    <div class="header">
+        <div class="container">
+            <!--  header inner -->
+            <!-- header section start -->
+            <div class="header_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="banner_section">
-                    <div class="container-fluid">
-                        <section class="slide-wrapper">
-                            <div class="container-fluid">
-                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                    <!-- Indicators -->
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                                        <li data-target="#myCarousel" data-slide-to="3"></li>
-                                    </ol>
 
-
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     </div>
     <!-- end header end -->
-    
+
     <!--services start -->
     <div class="services_main">
         <div class="container">
             <div class="creative_taital">
-                <h1 class="creative_text"><?php
-                $id=intval($_GET['link']);
-                define('DB_SERVER', 'localhost');
-                define('DB_USERNAME', 'root');
-                define('DB_PASSWORD', '');
-                define('DB_NAME', 'eshop');
-                
-                
-                $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-                $sql = "SELECT title FROM blog WHERE id =".$id;
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    // output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                         echo "<span>" .$row["title"] ."</span>";
+                <h1 class="creative_text">
+                    <?php
+                    $id = intval($_GET['link']);
+                    define('DB_SERVER', 'localhost');
+                    define('DB_USERNAME', 'root');
+                    define('DB_PASSWORD', '');
+                    define('DB_NAME', 'eshop');
+
+
+                    $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+                    // Check connection
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
                     }
-                   
-                } else {
-                    echo "0 results";
-                }
-                $conn->close();
-                ?></h1>
+                    $sql = "SELECT title FROM blogs WHERE id =" . $id;
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<span>" . $row["title"] . "</span>";
+                        }
+                    } else {
+                        echo "0 results";
+                    }
+                    $conn->close();
+                    ?></h1>
 
 
 
@@ -756,31 +740,23 @@
 
 
                 <?php
-               
+
                 $id = intval($_GET['link']);
-                  
-            
-                   // echo "Chevking". $id; //Outputs: 2
-                
-                // define('DB_SERVER', 'localhost');
-                // define('DB_USERNAME', 'root');
-                // define('DB_PASSWORD', '');
-                // define('DB_NAME', 'eshop');
-                
-                
+
+
+
                 $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
                 // Check connection
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
-                $sql = "SELECT description FROM blog WHERE id =".$id;
+                $sql = "SELECT description FROM blogs WHERE id =" . $id;
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while ($row = $result->fetch_assoc()) {
-                         echo "<p>" .$row["description"] ."</p>";
+                        echo "<p>" . $row["description"] . "</p>";
                     }
-                   
                 } else {
                     echo "0 results";
                 }
@@ -795,19 +771,22 @@
         </div>
     </div>
     <!--services end -->
+
+
+
     <!-- section footer start -->
     <div class="section_footer">
         <div class="container">
             <div class="mail_section">
                 <div class="row">
                     <div class="col-sm-6 col-lg-2">
-                        <div><a href="#"><img src="images/footer-logo.png"></a></div>
+                        <!-- <div><a href="#"><img src="images/footer-logo.png"></a></div> -->
                     </div>
-                    <!-- <div class="col-sm-6 col-lg-2">
-						<div class="footer-logo"><img src="images/phone-icon.png"><span class="map_text">(71) 1234567890</span></div> -->
-                    <!-- </div> -->
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="footer-logo"><img src="images/phone-icon.png"><span class="map_text">(71) 1234567890</span></div>
+                    </div>
                     <div class="col-sm-6 col-lg-3">
-                        <div class="footer-logo"><img src="images/email-icon.png"><span class="map_text">TuitionsTonight@gmail.com</span></div>
+                        <div class="footer-logo"><img src="images/email-icon.png"><span class="map_text">Demo@gmail.com</span></div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="social_icon">
@@ -822,11 +801,11 @@
                     <div class="col-sm-2"></div>
                 </div>
             </div>
-            
         </div>
     </div>
     </div>
-
+    <!-- section footer end -->
+    <div class="copyright">2019 All Rights Reserved. <a href="https://html.design">Free html Templates</a></div>
 
 
     <!-- Javascript files-->
@@ -847,35 +826,35 @@
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script>
         $(document).ready(function() {
-                    $(".fancybox").fancybox({
-                        openEffect: "none",
-                        closeEffect: "none"
-                    });
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
 
 
-                    $('#myCarousel').carousel({
-                        interval: false
-                    });
+            $('#myCarousel').carousel({
+                interval: false
+            });
 
-                    //scroll slides on swipe for touch enabled devices
+            //scroll slides on swipe for touch enabled devices
 
-                    $("#myCarousel").on("touchstart", function(event) {
+            $("#myCarousel").on("touchstart", function(event) {
 
-                        var yClick = event.originalEvent.touches[0].pageY;
-                        $(this).one("touchmove", function(event) {
+                var yClick = event.originalEvent.touches[0].pageY;
+                $(this).one("touchmove", function(event) {
 
-                            var yMove = event.originalEvent.touches[0].pageY;
-                            if (Math.floor(yClick - yMove) > 1) {
-                                $(".carousel").carousel('next');
-                            } else if (Math.floor(yClick - yMove) < -1) {
-                                $(".carousel").carousel('prev');
-                            }
-                        });
-                        $(".carousel").on("touchend", function() {
-                            $(this).off("touchmove");
-                        });
-                    });
+                    var yMove = event.originalEvent.touches[0].pageY;
+                    if (Math.floor(yClick - yMove) > 1) {
+                        $(".carousel").carousel('next');
+                    } else if (Math.floor(yClick - yMove) < -1) {
+                        $(".carousel").carousel('prev');
+                    }
                 });
+                $(".carousel").on("touchend", function() {
+                    $(this).off("touchmove");
+                });
+            });
+        });
     </script>
 
 

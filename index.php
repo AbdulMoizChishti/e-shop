@@ -1,32 +1,6 @@
-<?php
-include "config.php";
-if (isset($_REQUEST["submit"])) {
-	
-	// $id = $_REQUEST["id"];
-    $email = $_REQUEST["email"];
-    
-	echo "hgsfdsahgvdansvdnasvdansvdnavsd";
-
-
-    $ins = "INSERT INTO subscription (email) VALUES ('$email')";
-    $query1 = mysqli_query($connection, $ins);
-
-    if ($query1) {
-        echo "inserted";
-    }
-	else{
-		die();
-	}
-}
-?>
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,7 +29,7 @@ if (isset($_REQUEST["submit"])) {
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-	</head>
+</head>
 
 
 <body class="main-layout">
@@ -95,7 +69,7 @@ if (isset($_REQUEST["submit"])) {
 							<div class="carousel-inner">
 								<div class="carousel-item active">
 									<div class="row">
-										
+
 										<div class="col-sm-5">
 											<div class="banner_taital">
 												<h1 class="banner_text">New Running Shoes </h1>
@@ -122,7 +96,7 @@ if (isset($_REQUEST["submit"])) {
 												<h1 class="banner_text">New Running Shoes </h1>
 												<h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
 												<p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-												<a  target= "_blank"href= "https://www.youtube.com/channel/UCsZydS6Ww6KdeGsYao4lniw"class="buy_bt">Visit YT</a>
+												<a target="_blank" href="https://www.youtube.com/channel/UCsZydS6Ww6KdeGsYao4lniw" class="buy_bt">Visit YT</a>
 												<button class="more_bt">See More</button>
 											</div>
 										</div>
@@ -248,7 +222,7 @@ if (isset($_REQUEST["submit"])) {
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- new collection section end -->
 	<!-- New Arrivals section start -->
 	<div class="collection_text">Shoes</div>
@@ -263,7 +237,7 @@ if (isset($_REQUEST["submit"])) {
 			<div class="row">
 				<?php
 				require_once "config.php";
-				$product_array = ("SELECT * FROM blog ORDER BY id ASC");
+				$product_array = ("SELECT * FROM blogs ORDER BY id ASC");
 				$query1 = mysqli_query($connection, $product_array);
 				if (!empty($query1)) {
 					foreach ($query1 as $key => $value) {
@@ -272,7 +246,29 @@ if (isset($_REQUEST["submit"])) {
 
 
 							<div class="best_shoes">
-								<p class="best_text">Best Shoes </p>
+								<p class="best_text">  <?php
+                    $id = 1;
+                   
+
+                    $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+                    // Check connection
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+                    $sql = "SELECT title FROM blogs WHERE id =" . $id;
+
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<span>" . $row["title"] . "</span>";
+							$id++;
+                        }
+                    } else {
+                        echo "0 results";
+                    }
+                    $conn->close();
+                    ?></p>
 								<div class="shoes_icon">
 
 									<?php
@@ -280,7 +276,7 @@ if (isset($_REQUEST["submit"])) {
 									require_once 'config.php';
 									$r = $connection->query("SELECT image FROM images");
 									while ($row = $r->fetch_assoc()) {
-										static	$a = 8;
+										static	$a = 1;
 
 										// Get image data from database 
 										$result = $connection->query("SELECT image FROM images where id =" . $a);
@@ -327,8 +323,39 @@ if (isset($_REQUEST["submit"])) {
 	</div>
 	</div>
 	<!-- New Arrivals section end -->
-	
 
+	<!-- section footer start -->
+	<div class="section_footer">
+		<div class="container">
+			<div class="mail_section">
+				<div class="row">
+					<div class="col-sm-6 col-lg-2">
+						<!-- <div><a href="#"><img src="images/footer-logo.png"></a></div> -->
+					</div>
+					<div class="col-sm-6 col-lg-2">
+						<div class="footer-logo"><img src="images/phone-icon.png"><span class="map_text">(71) 1234567890</span></div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="footer-logo"><img src="images/email-icon.png"><span class="map_text">Demo@gmail.com</span></div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="social_icon">
+							<ul>
+								<li><a href="#"><img src="images/fb-icon.png"></a></li>
+								<li><a href="#"><img src="images/twitter-icon.png"></a></li>
+								<li><a href="#"><img src="images/in-icon.png"></a></li>
+								<li><a href="#"><img src="images/google-icon.png"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- section footer end -->
+	<div class="copyright">2019 All Rights Reserved. <a href="https://html.design">Free html Templates</a></div>
 
 	<!-- Javascript files-->
 	<script src="js/jquery.min.js"></script>
@@ -344,37 +371,37 @@ if (isset($_REQUEST["submit"])) {
 	<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 	<script>
 		$(document).ready(function() {
-					$(".fancybox").fancybox({
-						openEffect: "none",
-						closeEffect: "none"
-					});
+			$(".fancybox").fancybox({
+				openEffect: "none",
+				closeEffect: "none"
+			});
 
 
-					$('#myCarousel').carousel({
-						interval: false
-					});
+			$('#myCarousel').carousel({
+				interval: false
+			});
 
-					//scroll slides on swipe for touch enabled devices
+			//scroll slides on swipe for touch enabled devices
 
-					$("#myCarousel").on("touchstart", function(event) {
+			$("#myCarousel").on("touchstart", function(event) {
 
-						var yClick = event.originalEvent.touches[0].pageY;
-						$(this).one("touchmove", function(event) {
+				var yClick = event.originalEvent.touches[0].pageY;
+				$(this).one("touchmove", function(event) {
 
-							var yMove = event.originalEvent.touches[0].pageY;
-							if (Math.floor(yClick - yMove) > 1) {
-								$(".carousel").carousel('next');
-							} else if (Math.floor(yClick - yMove) < -1) {
-								$(".carousel").carousel('prev');
-							}
-						});
-						$(".carousel").on("touchend", function() {
-							$(this).off("touchmove");
-						});
-					});
-				})
+					var yMove = event.originalEvent.touches[0].pageY;
+					if (Math.floor(yClick - yMove) > 1) {
+						$(".carousel").carousel('next');
+					} else if (Math.floor(yClick - yMove) < -1) {
+						$(".carousel").carousel('prev');
+					}
+				});
+				$(".carousel").on("touchend", function() {
+					$(this).off("touchmove");
+				});
+			});
+		})
 	</script>
 </body>
 
 
-</html>	
+</html>

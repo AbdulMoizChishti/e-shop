@@ -4,14 +4,12 @@ require_once "config.php";
 
 if (isset($_REQUEST["submit"])) {
     
-    $pic = $_REQUEST["pic"];
-    $name = $_REQUEST["name"];
-    $price = $_REQUEST["price"];
-    $description = $_REQUEST["description"];
+    $url = $_REQUEST["url"];
+    
     
 
 
-    $ins = "INSERT INTO products (pic,name,price, description) VALUES ('$pic','$name','$price','$description')";
+    $ins = "INSERT INTO playlist (url) VALUES ('$url')";
     $query1 = mysqli_query($connection, $ins);
 
     // if ($query1) {
@@ -195,26 +193,17 @@ if (isset($_REQUEST["submit"])) {
 <body>
     <div class="background"></div>
     <div class="container">
-        <h2>New Product</h2>
-        <form action="newpro.php" method="post">
+        <h2>New Playlist</h2>
+        <form action="newplaylist.php" method="post">
 
      
 
 
 
             <div class="form-item">
-                <input type="text" class="email-bt" placeholder="Name" name="name">
-            </div>
-            <div class="form-item">
-                <input type="text" class="email-bt" placeholder="Price" name="price">
-            </div>
-            <div class="form-item">
-                <input type="file" name="pic">
+                <input type="url" class="email-bt" placeholder="url" name="url">
             </div>
 
-            <div class="form-item">
-                <textarea class="massage-bt" placeholder="Description" rows="5" id="comment" name="description"></textarea>
-            </div>
             <input type="submit"  name ='submit'value="submit">
         </form>
     </div>

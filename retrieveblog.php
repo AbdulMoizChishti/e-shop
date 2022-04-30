@@ -243,10 +243,6 @@ if (isset($_REQUEST["update"])) {
         echo $id;
         
           $sql = "SELECT description FROM blog WHERE id =".$id;
-          // $query1 = mysqli_query($connection, $sql);
-        
-         
-        
         
         $result = $connection->query($sql);
                 if ($result->num_rows > 0) {
@@ -258,7 +254,7 @@ if (isset($_REQUEST["update"])) {
                 } else {
                     echo "0 results";
                 }}
-                // $connection->close();
+                
                 ?> >
                 </textarea>
       </div>
@@ -270,7 +266,7 @@ if (isset($_REQUEST["update"])) {
       
 
       <div class="form-item">
-        <input type="update" name='update' value="update">
+        <input type="submit" name='update' value="update">
       </div>
 
     </form>

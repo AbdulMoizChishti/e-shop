@@ -66,7 +66,7 @@
 			<div class="container-fluid">
 				<section class="slide-wrapper">
 					<div class="container-fluid">
-						
+
 					</div>
 				</section>
 			</div>
@@ -77,7 +77,8 @@
 	<div class="collection_section layout_padding">
 		<div class="container">
 			<h1 class="new_text"><strong>New Arrivals Playlist</strong></h1>
-			<p class="consectetur_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+			<p class="consectetur_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 		</div>
 	</div>
 	<div class="layout_padding gallery_section">
@@ -85,7 +86,7 @@
 			<div class="row">
 				<?php
 				require_once "config.php";
-				$product_array = ("SELECT * FROM blog ORDER BY id ASC");
+				$product_array = ("SELECT * FROM blogs ORDER BY id ASC");
 				$query1 = mysqli_query($connection, $product_array);
 				if (!empty($query1)) {
 					foreach ($query1 as $key => $value) {
@@ -94,18 +95,21 @@
 
 
 							<div class="best_shoes">
-								<p class="best_text">Best Shoes </p>
-								<div class="shoes_icon">
-
+							<p class="best_text">Best Shoes </p>
+								
 									<?php
 									// Include the database configuration file  
 									require_once 'config.php';
 									$r = $connection->query("SELECT image FROM images");
 									while ($row = $r->fetch_assoc()) {
-										static	$a = 8;
+										static	$a = 1;
 
 										// Get image data from database 
 										$result = $connection->query("SELECT image FROM images where id =" . $a);
+
+										if ($result == "Image(s) not found...") {
+											$a++;
+										}
 									}
 
 									echo $a;
@@ -149,8 +153,40 @@
 	</div>
 	</div>
 	<!-- New Arrivals section end -->
-	
 
+	<!-- section footer start -->
+	<div class="section_footer">
+		<div class="container">
+			<div class="mail_section">
+				<div class="row">
+					<div class="col-sm-6 col-lg-2">
+						<!-- <div><a href="#"><img src="images/footer-logo.png"></a></div> -->
+					</div>
+					<div class="col-sm-6 col-lg-2">
+						<div class="footer-logo"><img src="images/phone-icon.png"><span class="map_text">(71)
+								1234567890</span></div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="footer-logo"><img src="images/email-icon.png"><span class="map_text">Demo@gmail.com</span></div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="social_icon">
+							<ul>
+								<li><a href="#"><img src="images/fb-icon.png"></a></li>
+								<li><a href="#"><img src="images/twitter-icon.png"></a></li>
+								<li><a href="#"><img src="images/in-icon.png"></a></li>
+								<li><a href="#"><img src="images/google-icon.png"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- section footer end -->
+	<div class="copyright">2019 All Rights Reserved. <a href="https://html.design">Free html Templates</a></div>
 
 
 	<!-- Javascript files-->

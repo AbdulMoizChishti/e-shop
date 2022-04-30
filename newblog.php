@@ -45,7 +45,7 @@ echo $statusMsg;
 ?>
 
 <?php
-
+require_once 'config.php';
 if (isset($_REQUEST["submit"])) {
 
     $title = $_REQUEST["title"];
@@ -53,11 +53,14 @@ if (isset($_REQUEST["submit"])) {
 
 
 
-    $ins = "INSERT INTO blog (title, description) VALUES ('$title','$description')";
+    $ins = "INSERT INTO `blogs`(`title`, `description`) VALUES ('$title','$description')";
     $query1 = mysqli_query($connection, $ins);
 
     if ($query1) {
         echo "stored";
+    }
+    else {
+        echo "error";
     }
 }
 
@@ -251,7 +254,7 @@ if (isset($_REQUEST["submit"])) {
             <div class="form-item">
                 <textarea class="massage-bt" placeholder="Description" rows="5" id="description" name="description"></textarea>
             </div>
-            <input type="submit" name='submit' value="submit">
+            <input type="submit" name="submit" value="submit">
         </form>
     </div>
 

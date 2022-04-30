@@ -156,7 +156,7 @@
         <span class="material-icons-outlined">
           account_circle
         </span>
-        <a href="newpro.php">New Product</a>
+        <a href="newplaylist.php">New Product</a>
       </div>
       
     </form>

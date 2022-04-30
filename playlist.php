@@ -66,41 +66,120 @@
 	</div>
 	<!-- header section end -->
 	<!-- new collection section start -->
-	<div class="collection_text">Playlist.</div>
+	<div class="collection_text">Playlist</div>
 	<div class="layout_padding collection_section">
 		<div class="container">
 			<h1 class="new_text"><strong>New Playlist</strong></h1>
 			<p class="consectetur_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 			<div class="collection_section_2">
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="best_shoes">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLA9pgpaiFC6VpV7djzRuUu_kbYcjlkkIm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
+			<div class="row">
 
-					<div class="col-sm-4">
-						<div class="best_shoes">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLA9pgpaiFC6UgYtBTS4IMK4u5YzcflCYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
+								<?php
+								require_once "config.php";
+								$product_array = ("SELECT * FROM playlist ORDER BY id ASC");
+								$query1 = mysqli_query($connection, $product_array);
+								if (!empty($query1)) {
+								foreach ($query1 as $key => $value) {
+								?>
 
-					<div class="col-sm-4">
-						<div class="best_shoes">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLA9pgpaiFC6XqRyLeOrWbM2-oIk0hTLBe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
 
+			
 					<div class="col-sm-4">
+					<?php
+								// Include the database configuration file  
+								require_once 'config.php';
+								$r = $connection->query("SELECT url FROM playlist");
+								while ($rows = $r->fetch_assoc()) {
+									static	$a = 1;
+
+									// Get image data from database 
+									$result = $connection->query("SELECT image FROM images where id =" . $a);
+
+											if ($result == "Image(s) not found...") {
+											$a++;
+										}
+
+										
+											?>
+
+					
 						<div class="best_shoes">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLA9pgpaiFC6XdNTgvs8YHGFYFODFlueqv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<?php if ($result->num_rows > 0) { ?>
+												<?php
+												while ($row = $result->fetch_assoc()) {
+													// echo $a;
+												?>
+						
+												<a target="blank" href="<?php echo $rows['url']; ?>" target="blank"><img width="370" height="315" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>"><b>JAVA TUTORIALS</b></a>
+											<?php
+													$a++;
+												}
+											}
+										}
+									}
+
+									?>
+									<?php
+												} else {
+											?>
+										<p class="status error">Image(s) not found...</p>
+												<?php
+											}
+										?>
+
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
 	<!-- new collection section end -->
+
+
+	<!-- section footer start -->
+	<div class="section_footer">
+		<div class="container">
+			<div class="mail_section">
+				<div class="row">
+					<div class="col-sm-6 col-lg-2">
+						<!-- <div><a href="#"><img src="images/footer-logo.png"></a></div> -->
+					</div>
+					<div class="col-sm-6 col-lg-2">
+						<div class="footer-logo"><img src="images/phone-icon.png"><span class="map_text">(71)
+								1234567890</span></div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="footer-logo"><img src="images/email-icon.png"><span class="map_text">Demo@gmail.com</span></div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="social_icon">
+							<ul>
+								<li><a href="#"><img src="images/fb-icon.png"></a></li>
+								<li><a href="#"><img src="images/twitter-icon.png"></a></li>
+								<li><a href="#"><img src="images/in-icon.png"></a></li>
+								<li><a href="#"><img src="images/google-icon.png"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- section footer end -->
+	<div class="copyright">2019 All Rights Reserved. <a href="https://html.design">Free html Templates</a></div>
+
 
 
 	<!-- Javascript files-->

@@ -165,7 +165,7 @@
   <div class="background"></div>
   <div class="container">
     <h2>Blog Dashboard</h2>
-    <form action="blogdash.php" method="post">
+    <form action="blogdashboard.php" method="post">
       <div class="form-item">
         <span class="material-icons-outlined">
           account_circle

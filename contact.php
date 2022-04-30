@@ -1,3 +1,25 @@
+<?php
+require_once 'config.php';
+if (isset($_REQUEST["submit"])) {
+
+    $name = $_REQUEST["name"];
+    $email = $_REQUEST["email"];
+    $description = $_REQUEST["description"];
+    $deadline = $_REQUEST["deadline"];
+    $category = $_REQUEST["category"];
+
+
+
+    $ins = "INSERT INTO `assist`(`name`,`email`,`description`,`deadline`,`category`) VALUES ('$name','$email','$description','$deadline','$category')";
+    $query1 = mysqli_query($connection, $ins);
+
+
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,9 +97,9 @@
                         <div class="email_box">
                             <div class="input_main">
                                 <div class="container">
-                                    <form action="/action_page.php">
+                                    <form action="index.php" >
                                         <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="Name" name="Name">
+                                            <input type="text" class="email-bt" placeholder="Name" name="name">
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="email-bt" placeholder="E-mail" name="email">
@@ -87,23 +109,24 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <textarea class="massage-bt" placeholder="Project Description" rows="5" id="comment" name="Prpjectdescription"></textarea>
+                                            <textarea class="massage-bt" placeholder="Project Description" rows="5" id="comment" name="description"></textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <p>Please select your Category:</p>
-                                              <input type="radio" id="html" name="fav_language" value="HTML">
+                                              <input type="radio" id="html" name="category" value="university">
                                               <label for="html">University Project</label><br>
-                                              <input type="radio" id="css" name="fav_language" value="CSS">
+                                              <input type="radio" id="css" name="category" value="commercial">
                                               <label for="css">Commercial Project</label><br>
 
 
                                         </div>
+                                        <div class="send_btn">
+                                            <input type="submit" name="submit" value="submit">
+                                        </div>
                                     </form>
                                 </div>
-                                <div class="send_btn">
-                                    <button class="main_bt">Send</button>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -118,7 +141,38 @@
             </div>
         </div>
         <!-- contact section end -->
-        
+        <!-- section footer start -->
+        <div class="section_footer">
+            <div class="container">
+                <div class="mail_section">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-2">
+                            <!-- <div><a href="#"><img src="images/footer-logo.png"></a></div> -->
+                        </div>
+                        <div class="col-sm-6 col-lg-2">
+                            <div class="footer-logo"><img src="images/phone-icon.png"><span class="map_text">(71) 1234567890</span></div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="footer-logo"><img src="images/email-icon.png"><span class="map_text">Demo@gmail.com</span></div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="social_icon">
+                                <ul>
+                                    <li><a href="#"><img src="images/fb-icon.png"></a></li>
+                                    <li><a href="#"><img src="images/twitter-icon.png"></a></li>
+                                    <li><a href="#"><img src="images/in-icon.png"></a></li>
+                                    <li><a href="#"><img src="images/google-icon.png"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section footer end -->
+    <div class="copyright">2019 All Rights Reserved. <a href="https://html.design">Free html Templates</a></div>
 
     <!-- Javascript files-->
     <script src="js/jquery.min.js"></script>
